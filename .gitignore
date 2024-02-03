@@ -1,0 +1,6 @@
+.env
+
+.DS_Store
+app/.DS_Store
+handlers/.DS_Store
+models/.DS_Store
