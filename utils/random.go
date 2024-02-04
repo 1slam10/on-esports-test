@@ -9,10 +9,10 @@ import (
 // Function returns a random quote from an array with quotes of type string
 // It generates a random index using randomInteger function and
 // returns a quote at the random index
-func RandomQuote(quotes []string) string {
-	randomIndex := randomInteger(0, len(quotes) - 1)
+func RandomQuote(quotes *[]string) string {
+	randomIndex := randomInteger(0, len(*quotes) - 1)
 
-	quote := quotes[randomIndex]
+	quote := (*quotes)[randomIndex]
 
 	return quote
 }

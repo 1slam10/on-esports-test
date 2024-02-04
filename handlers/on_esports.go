@@ -26,7 +26,7 @@ var onEsportsQuotes = []string{
 }
 
 func OnEsportsHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
-	randomQuote := utils.RandomQuote(onEsportsQuotes)
+	randomQuote := utils.RandomQuote(&onEsportsQuotes)
 
 	s.ChannelMessageSend(m.ChannelID, randomQuote)
 }
