@@ -36,7 +36,7 @@ func (app *App) Start() error {
 
 		message := m.Content
 
-		s.ChannelMessageSend(m.ChannelID, message)
+		s.ChannelMessageSend(m.ChannelID, Reverse(message))
 	})
 
 	sess.Identify.Intents = discordgo.IntentsAllWithoutPrivileged
@@ -59,4 +59,14 @@ func (app *App) Start() error {
 	<- sc
 
 	return nil
+}
+
+func Reverse(str string) string {
+	bytes := []byte(str)
+
+	for i := 0; i < len(bytes) / 2; i++ {
+		bytes[i], bytes[len(bytes) - i - 1] = bytes[len(bytes) - i - 1], bytes[i]
+	}
+
+	return string(bytes)
 }
