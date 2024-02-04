@@ -6,6 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"on-esports/handlers"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -22,6 +23,7 @@ func New(token string) *App {
 }
 
 func (app *App) Start() error {
+
 	//creating a new Discrod session with our Discord Token
 	sess, err := discordgo.New(app.Token)
 
@@ -29,15 +31,9 @@ func (app *App) Start() error {
 		return err
 	}
 
-	sess.AddHandler(func (s *discordgo.Session, m *discordgo.MessageCreate) {
-		if m.Author.ID == s.State.User.ID {
-			return
-		}
-
-		message := m.Content
-
-		s.ChannelMessageSend(m.ChannelID, Reverse(message))
-	})
+	// adding command handlers to our session
+	sess.AddHandler(handlers.OnEsportsHandler)
+	sess.AddHandler(handlers.QuoteHandler)
 
 	sess.Identify.Intents = discordgo.IntentsAllWithoutPrivileged
 
@@ -59,14 +55,4 @@ func (app *App) Start() error {
 	<- sc
 
 	return nil
-}
-
-func Reverse(str string) string {
-	bytes := []byte(str)
-
-	for i := 0; i < len(bytes) / 2; i++ {
-		bytes[i], bytes[len(bytes) - i - 1] = bytes[len(bytes) - i - 1], bytes[i]
-	}
-
-	return string(bytes)
 }
