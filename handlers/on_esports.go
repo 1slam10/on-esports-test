@@ -7,7 +7,7 @@ import (
 )
 
 var onEsportsQuotes = []string{
-	"Возьмите меня на работу, готов работать хоть за миску супа",
+	"Возьмите на работу плиииз, готов работать за спасибо :)",
 	"ON Esports? More like ON Point Esports, am I right, comrades?",
 	"Their blockchain tech is like a legendary loot box, you never know what epic esports goodies you'll find inside!",
 	"They're revolutionizing esports faster than Anatoliy can down a bowl of borscht.",
@@ -28,5 +28,7 @@ var onEsportsQuotes = []string{
 func OnEsportsHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	randomQuote := utils.RandomQuote(&onEsportsQuotes)
 
-	s.ChannelMessageSend(m.ChannelID, randomQuote)
+	formattedQuote := utils.FormatOnEsports(randomQuote)
+
+	s.ChannelMessageSend(m.ChannelID, formattedQuote)
 }

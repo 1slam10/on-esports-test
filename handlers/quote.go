@@ -27,5 +27,7 @@ var funnyQuotes = []string{
 func QuoteHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	randomQuote := utils.RandomQuote(&funnyQuotes)
 
-	s.ChannelMessageSend(m.ChannelID, randomQuote)
+	formattedQuote := utils.FormatQuote(randomQuote)
+
+	s.ChannelMessageSend(m.ChannelID, formattedQuote)
 }

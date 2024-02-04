@@ -10,7 +10,6 @@ import (
 func main() {
 	// Loading discord bot access token from env file into current process
 	godotenv.Load()
-
 	token := os.Getenv("DISCORD_TOKEN")
 
 	app := app.New(token)
