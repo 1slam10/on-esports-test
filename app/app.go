@@ -6,14 +6,16 @@ import (
 	"os/signal"
 	"syscall"
 
-	"on-esports/handlers"
+	"on-esports/handler"
 
 	"github.com/bwmarrin/discordgo"
 )
 
+
 type App struct {
 	Token string
 }
+
 
 func New(token string) *App {
 
@@ -31,9 +33,10 @@ func (app *App) Start() error {
 		return err
 	}
 
+	messageHandler := handler.NewHandler()
+
 	// adding command handlers to our session
-	sess.AddHandler(handlers.OnEsportsHandler)
-	sess.AddHandler(handlers.QuoteHandler)
+	sess.AddHandler(messageHandler.Handle)
 
 	sess.Identify.Intents = discordgo.IntentsAllWithoutPrivileged
 
@@ -48,8 +51,8 @@ func (app *App) Start() error {
 	defer sess.Close()
 
 
-	// some code to make our session open and make the bot serve
-	// channel waits for syscall such as interrupting from terminal: ^ + C as an example
+	// Some dummy code to make our session open and make the bot serve.
+	// Channel waits for syscall such as interrupting from terminal: ^ + C as an example
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<- sc

@@ -1,4 +1,4 @@
-package handlers
+package commands
 
 import (
 	"on-esports/utils"
@@ -6,6 +6,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+
+// AI generated list of playful quotes from Anatoliy
 var funnyQuotes = []string{
 	"Need stats faster than a pro gamer dodges bullets? Anatoliy got your back, comrade!",
 	"Upcoming matches got you hyped like a free skin giveaway? Check the schedule, then tell Anatoliy your predictions... no lowball offers on victory predictions!",
@@ -24,7 +26,20 @@ var funnyQuotes = []string{
 	"Don't underestimate the power of a passionate gamer with questionable internet access and an even more questionable sense of humor. That's Anatoliy, and he's here to make your esports experience epic.",
 }
 
+
+// Function to create a /quote command
+func NewQuote() *utils.Command {
+	return &utils.Command{
+		Command: "/quote",
+		Description: "Gives you a random quote by Anatoliy",
+		Handler: QuoteHandler,
+	}
+}
+
+
+// Message handler for /quote command to send random quote
 func QuoteHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
+
 	randomQuote := utils.RandomQuote(&funnyQuotes)
 
 	formattedQuote := utils.FormatQuote(randomQuote)

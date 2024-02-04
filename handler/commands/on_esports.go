@@ -1,4 +1,4 @@
-package handlers
+package commands
 
 import (
 	"on-esports/utils"
@@ -6,6 +6,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+
+// A list of quotes related to "ON Esports"
 var onEsportsQuotes = []string{
 	"Возьмите на работу плиииз, готов работать за спасибо :)",
 	"ON Esports? More like ON Point Esports, am I right, comrades?",
@@ -25,7 +27,19 @@ var onEsportsQuotes = []string{
 	"Anatoliy guarantees ON Esports is more fun than a pixelated puppy, and that's saying something!",
 }
 
+// Creating a new /on-esports command
+func NewOnEsports() *utils.Command {
+	return &utils.Command{
+		Command: "/on-esports",
+		Description: "Gives you a quote about \"ON Esports\" company :)",
+		Handler: OnEsportsHandler,
+	}
+}
+
+
+// tha function that actually serves for /on-esports
 func OnEsportsHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
+
 	randomQuote := utils.RandomQuote(&onEsportsQuotes)
 
 	formattedQuote := utils.FormatOnEsports(randomQuote)
