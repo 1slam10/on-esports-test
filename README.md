@@ -1,7 +1,5 @@
 ## ON Esports Discord Bot - Go Developer Task
 
----
-
 ### The task
 
 Develop a Go-based Discord bot with unique features to engage users.
@@ -31,8 +29,6 @@ Develop a Go-based Discord bot with unique features to engage users.
 
 ## Meet Anatoliy
 
----
-
 **Anatoliy** is a gamer and cybersports enthusiast. He loves to play games a lot, but more than anything, he loves to prompt chatting game results and schedules. Also, when Anatoly is not playing games, he works part-time as a bookmaker and will be able to take your bet on a game. But will he return your winnings...
 
 The bot intends to provide a variety of features to help users stay up to date with the latest esports news, game and players statistics, and provide some gamification in the form of "bets" to upcoming games.
@@ -57,8 +53,6 @@ The bot intends to provide a variety of features to help users stay up to date w
 
 
 ## How to run
-
----
 
 1. Clone the repository
 2. Create a `.env` file in the root of the project and add the following:  
