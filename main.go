@@ -25,10 +25,11 @@ func main() {
 // The initial project should have been more complex and more creative than what I have now. 
 // The features that I wanted to add initially listed below
 
+// TODO: Add command to check latest news of given discipline
 // TODO: Add command to check given player’s avg. statistics
 // TODO: Add command to check given player's performance on given match
 // TODO: Add command to check past game result of given team in the given discipline
-// TODO: Add command to get upcoming games and tournaments of specified team
+// TODO: Add command to get upcoming games and tournaments of specified team or discipline.
 // TODO: Add command to get H2H (Head-to-Head) stats of two commands
 // TODO: Add "gamification": to implement coins
 // TODO: Add command to create a bet on specified match using those coins
