@@ -60,13 +60,17 @@ The bot intends to provide a variety of features to help users stay up to date w
     ```env
     DISCORD_BOT_TOKEN=<YOUR_DISCORD_BOT_TOKEN>
     ```
-
+    > 💡 You should create an application on [Descord Developer Portal](https://discord.com/developers/applications) and get your bot token on order to run it.
 3. Run the bot using the following command:
 
     ```bash
     go run main.go
     ```
 
+4. In order to use the bot that is running with your Discord Bot token, get your link to add it from your [Descord Developer Portal](https://discord.com/developers/applications). Click on your application --> Choose Oauth2 / URL Generator tab from sidebar --> Choose `bot` in "SCOPES" --> Give permissions to your bot (Administrator) --> Get the link!
+
 OR
 
-Just use the [link](https://discord.com/api/oauth2/authorize?client_id=1203244936498257930&permissions=8&scope=bot) to add the bot to your server!
+Just use the [link](https://discord.com/api/oauth2/authorize?client_id=1203244936498257930&permissions=8&scope=bot) to add the bot to your server! ( But it is not currently hosted anywhere, so run it locally for now, lol )
+
+### Voila!
