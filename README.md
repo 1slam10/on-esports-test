@@ -71,6 +71,6 @@ The bot intends to provide a variety of features to help users stay up to date w
 
 OR
 
-Just use the [link](https://discord.com/api/oauth2/authorize?client_id=1203244936498257930&permissions=8&scope=bot) to add the bot to your server! ( But it is not currently hosted anywhere, so run it locally for now, lol )
+Just use the [link](https://discord.com/api/oauth2/authorize?client_id=1203244936498257930&permissions=8&scope=bot) to add the bot to your server! ( But it is not currently hosted anywhere, so run it locally for now )
 
 ### Voila!
